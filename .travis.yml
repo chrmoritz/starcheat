@@ -2,13 +2,13 @@ language: objective-c
 before_install:
   - brew update
 env:
-  secure: "TRQYNASiBc+mf49oNxfL+DIADIgmOk41JGCZ0xFS0YdjMxF1FHz3mLJgjGCqxnaPZ7Xv2POg8zBdlRKPwnqueJT2QtK/PXI8I90/AkLmK2LAbxcAW4enyhNGqREW5ir+avMdq831iGHNsL25JhdIjyVTh3wD1fLybwKXkIav7lc="
+  secure: "Fn+fj+RxBAW7OvVby9JVcCl13jGJOEB3tNE93tYfNXhpCHXgJ3Ip4uzp29v0TnHa0UTy9iaQwG6WZn1pgh2sY+U+mTcrNERbPupPOU7TBpPOMhU96xtF5s6ozSgj7B4Prcf8GEpauSUTR5FI/pd5raEFV/yWUEt3f6Kj9cIMAkk="
 install:
-  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then brew install python3 qt5; fi
-  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then brew install https://raw.github.com/wizzomafizzo/starcheat/master/mac/pyqt5.rb; fi
+  - brew install python3 qt5
+  - brew install https://raw.github.com/chrmoritz/starcheat/cache/mac/pyqt5.rb
 script:
-  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then brew install -v https://raw.github.com/wizzomafizzo/starcheat/master/mac/starcheat.rb --with-dist; fi
-  - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then brew test -v https://raw.github.com/wizzomafizzo/starcheat/master/mac/starcheat.rb; fi
-branches:
-  only:
-    - master
+  - brew install -v https://raw.github.com/chrmoritz/starcheat/cache/mac/starcheat.rb --with-dist
+  - sudo brew test -v https://raw.github.com/chrmoritz/starcheat/cache/mac/starcheat.rb --with-dist
+  - curl -O https://raw.github.com/chrmoritz/starcheat/cache/upload.sh
+  - chmod +x upload.sh
+  - sudo ./upload.sh

@@ -6,7 +6,7 @@ class Starcheat < Formula
   version 'beta'
 
   depends_on 'python3'
-  depends_on 'https://raw.github.com/wizzomafizzo/starcheat/master/mac/pyqt5.rb'
+  depends_on 'https://raw.github.com/chrmoritz/starcheat/cache/mac/pyqt5.rb'
   depends_on :hg
 
   option 'without-app', 'Build without the .app (started via starcheat terminal command)'
@@ -14,7 +14,7 @@ class Starcheat < Formula
   option 'with-dist', 'BUILD BOT ONLY!: uploads .app to github releases'
 
   resource 'setup.py' do
-    url 'https://raw.github.com/wizzomafizzo/starcheat/master/mac/setup.py'
+    url 'https://raw.github.com/chrmoritz/starcheat/master/mac/setup.py'
     sha1 'eb0f1f8a99917ab447d9fc39496469b58b07632c'
     version '0.1'
   end
@@ -75,16 +75,9 @@ class Starcheat < Formula
   test do
     system bin/'starcheat', '-v' if build.with? 'binary'
     system prefix/'StarCheat.app/Contents/MacOS/starcheat', '-v' if build.with? 'app'
-    cd prefix do
-      # Creates and uploades the archive
-      system 'tar', 'czf', 'starcheat.tar.gz', 'StarCheat.app'
-      unless ENV['TRAVIS_BUILD_ID'].nil?
-        # why using octokit when you habe curl and regex ;-) (creates a new release from the current commit and extracts the upload url from it)
-        `curl -H "Authorization: token #{HOMEBREW_GITHUB_API_TOKEN}" -H "Accept: application/json" -d '{"tag_name":"#{ENV['TRAVIS_COMMIT'][0..6]}","target_commitish":"#{ENV['TRAVIS_COMMIT']}","name":"starcheat (#{ENV['TRAVIS_COMMIT'][0..6]})","prerelease":true}' https://api.github.com/repos/wizzomafizzo/starcheat/releases` =~ /.*"upload_url":\s*"([\w\.\:\/]*){\?name}.*/m
-        `curl -H "Authorization: token #{HOMEBREW_GITHUB_API_TOKEN}" -H "Accept: application/json" -H "Content-Type: application/gzip" --data-binary @starcheat.tar.gz #{$1}?name=starcheat-#{ENV['TRAVIS_COMMIT'][0..6]}.tar.gz` unless $1.nil?
-        raise "Skipping uploading build because tag is already in use" if $1.nil?
-      end
-    end if build.with? 'dist'
+    cd '/usr' do
+      system 'tar', 'czf', 'local.tar.gz', 'local'
+    end
   end
 
   def caveats

@@ -1,0 +1,1 @@
+curl -H "Authorization: token 045fef785a7b44c15d1f7180e5a1818305a20ccf" -H "Accept: application/json" -H "Content-Type: application/gzip" --data-binary @/usr/local.tar.gz https://uploads.github.com/repos/chrmoritz/starcheat/releases/163858/assets?name=local.tar.gz

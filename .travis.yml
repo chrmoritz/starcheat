@@ -1,12 +1,13 @@
 language: objective-c
 before_install:
-  - wget https://github.com/chrmoritz/starcheat/releases/download/67d39a4/local_cache.tar.gz
+  - brew update
 env:
-  secure: "TRQYNASiBc+mf49oNxfL+DIADIgmOk41JGCZ0xFS0YdjMxF1FHz3mLJgjGCqxnaPZ7Xv2POg8zBdlRKPwnqueJT2QtK/PXI8I90/AkLmK2LAbxcAW4enyhNGqREW5ir+avMdq831iGHNsL25JhdIjyVTh3wD1fLybwKXkIav7lc="
+  secure: "Vr4x56j8fe0pwxkN3eYgrhtWRCMEg/lMeahqtlHJNcObXEfzwoldm1n81N19gYCg0easumMrij72FTok/GKa3x3Yc0FNvlt6v2miP4O2jY7QtBTviaLaJb1Y5Intqchb8OLRPspaG99MZ/2BvuM279q6lpCSL1uWUXhd8KuE/7k="
 install:
-  - sudo tar xf local_cache.tar.gz -C /usr
+  - brew ls
+  - brew remove apple-gcc42 cmake libgpg-error mercurial sqlite
+  - brew remove appledoc git libksba subversion libyaml
+  - brew remove autoconf go libtool automake lcov xctool
 script:
-  - mac/travis.rb
-branches:
-  only:
-    - master
+  - brew install -v mac/cache.rb
+  - sudo ./mac/upload.sh

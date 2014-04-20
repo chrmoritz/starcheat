@@ -1,8 +1,10 @@
 language: objective-c
 before_install:
   - brew update
+  - echo $TEST
+  - exit 42
 env:
-  secure: "gMziIyj3RhYYsD0jexWV3OcTQLqJxJPXNXWe2apeBunvv6uLgJSopPKe5ezSHWtlQNraXGB+KiT6KOne2sJ48hXSWcRTEFoXaNa4AQ1keqxarI14JGskU7q7g2FEsXLECe3YX7WoU4Y+JFaDOIItn9o8mL/zyWs0PLb3AnHIgDM="
+  secure: "DhvzGtfw8MMVxnGfXa8bHr2dmwF57EP/O0QS0UEFhSjyjiaK4cDfSmBkFhqn8Z3sFVll5r6iTYYnYGBCZ88UKmiokMOpcHE1JGF7SSYxEuM3Ys9znoSsO96+rAI10IL2ElpDw9VCWwVyoVnx3wAIeni2KBcFaG9nljuT/iBihQc="
 install:
   - brew ls
   - unset PYTHONPATH

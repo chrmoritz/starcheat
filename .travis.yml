@@ -1,8 +1,6 @@
 language: objective-c
 before_install:
   - brew update
-  - echo $TEST
-  - exit 42
 env:
   secure: "DhvzGtfw8MMVxnGfXa8bHr2dmwF57EP/O0QS0UEFhSjyjiaK4cDfSmBkFhqn8Z3sFVll5r6iTYYnYGBCZ88UKmiokMOpcHE1JGF7SSYxEuM3Ys9znoSsO96+rAI10IL2ElpDw9VCWwVyoVnx3wAIeni2KBcFaG9nljuT/iBihQc="
 install:

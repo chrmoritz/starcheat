@@ -5,6 +5,7 @@ env:
   secure: "gMziIyj3RhYYsD0jexWV3OcTQLqJxJPXNXWe2apeBunvv6uLgJSopPKe5ezSHWtlQNraXGB+KiT6KOne2sJ48hXSWcRTEFoXaNa4AQ1keqxarI14JGskU7q7g2FEsXLECe3YX7WoU4Y+JFaDOIItn9o8mL/zyWs0PLb3AnHIgDM="
 install:
   - brew ls
+  - unset PYTHONPATH
 script:
-  - brew install mac/cache.rb
+  - brew install -v mac/cache.rb
   - sudo ./mac/upload.sh

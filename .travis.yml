@@ -2,12 +2,12 @@ language: objective-c
 before_install:
   - brew update
 env:
-  secure: "Vr4x56j8fe0pwxkN3eYgrhtWRCMEg/lMeahqtlHJNcObXEfzwoldm1n81N19gYCg0easumMrij72FTok/GKa3x3Yc0FNvlt6v2miP4O2jY7QtBTviaLaJb1Y5Intqchb8OLRPspaG99MZ/2BvuM279q6lpCSL1uWUXhd8KuE/7k="
+  secure: "fvctlI93+bwjIeU8+XxvEEJYuniAP8P2G1SwEqhXyjexYAWO2qAy34ysxMvcj80C7nJfBO1yvoDFGyH+2lRsTyz2R/x4XvfrajjvNYL5II9YgPDKkz6191cVPdFcZHHR/GOpEyS2eptFSwLYgFPg0yKEhBqX2OpAaCQmm5qzdY4="
 install:
   - brew ls
   - brew remove apple-gcc42 cmake libgpg-error mercurial sqlite
   - brew remove appledoc git libksba subversion libyaml
   - brew remove autoconf go libtool automake lcov xctool
 script:
-  - brew install -v mac/cache.rb
+  - brew install mac/cache.rb
   - sudo ./mac/upload.sh

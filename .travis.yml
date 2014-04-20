@@ -2,7 +2,7 @@ language: objective-c
 before_install:
   - brew update
 env:
-  secure: "fvctlI93+bwjIeU8+XxvEEJYuniAP8P2G1SwEqhXyjexYAWO2qAy34ysxMvcj80C7nJfBO1yvoDFGyH+2lRsTyz2R/x4XvfrajjvNYL5II9YgPDKkz6191cVPdFcZHHR/GOpEyS2eptFSwLYgFPg0yKEhBqX2OpAaCQmm5qzdY4="
+  secure: "gMziIyj3RhYYsD0jexWV3OcTQLqJxJPXNXWe2apeBunvv6uLgJSopPKe5ezSHWtlQNraXGB+KiT6KOne2sJ48hXSWcRTEFoXaNa4AQ1keqxarI14JGskU7q7g2FEsXLECe3YX7WoU4Y+JFaDOIItn9o8mL/zyWs0PLb3AnHIgDM="
 install:
   - brew ls
   - brew remove apple-gcc42 cmake libgpg-error mercurial sqlite

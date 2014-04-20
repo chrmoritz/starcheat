@@ -5,9 +5,6 @@ env:
   secure: "gMziIyj3RhYYsD0jexWV3OcTQLqJxJPXNXWe2apeBunvv6uLgJSopPKe5ezSHWtlQNraXGB+KiT6KOne2sJ48hXSWcRTEFoXaNa4AQ1keqxarI14JGskU7q7g2FEsXLECe3YX7WoU4Y+JFaDOIItn9o8mL/zyWs0PLb3AnHIgDM="
 install:
   - brew ls
-  - brew remove apple-gcc42 cmake libgpg-error mercurial sqlite
-  - brew remove appledoc git libksba subversion libyaml
-  - brew remove autoconf go libtool automake lcov xctool
 script:
   - brew install mac/cache.rb
   - sudo ./mac/upload.sh

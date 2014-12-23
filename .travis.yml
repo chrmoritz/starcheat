@@ -1,18 +1,9 @@
 language: objective-c
 before_install:
-- brew update
-- unset PYTHONPATH
+  - brew update
 install:
-- brew ls
-- unset PYTHONPATH
+  - brew ls
+  - unset PYTHONPATH
 script:
-- brew install -v mac/cache.rb
-deploy:
-  provider: releases
-  api_key:
-    secure: YLpv9IsFlW2jnVfBzJPauna9URvFo7Ub8VVhHIFNaQ2YWXhw73fhyOjCc0b77NFd/n9c3nU/4fVOQMS2AacMGatUT/VeFLZRrWII+VvoqJgolRC+Y7zG3j4DyWMSnx6cBhY48hEWAUXq8aS49GCsE5Jh34IyVT7ly2+VIAmIsxY=
-  file: "/usr/local.tar.gz"
-  skip_cleanup: true
-  on:
-    repo: chrmoritz/starcheat
-    branch: create_cache
+  - brew install -v mac/cache.rb
+  - sudo ./mac/upload.sh

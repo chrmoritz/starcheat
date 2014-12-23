@@ -1,6 +1,7 @@
 language: objective-c
 before_install:
 - brew update
+- unset PYTHONPATH
 install:
 - brew ls
 - unset PYTHONPATH

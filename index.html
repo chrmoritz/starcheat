@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Starcheat by chrmoritz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Starcheat</h1>
+        <p>Starbound player save editor and Python library</p>
+        <p class="view"><a href="https://github.com/chrmoritz/starcheat">View the Project on GitHub <small>chrmoritz/starcheat</small></a></p>
+        <ul>
+          <li><a href="https://github.com/chrmoritz/starcheat/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/chrmoritz/starcheat/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/chrmoritz/starcheat">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="starcheat-" class="anchor" href="#starcheat-" aria-hidden="true"><span class="octicon octicon-link"></span></a>starcheat <a href="https://travis-ci.org/wizzomafizzo/starcheat"><img src="https://travis-ci.org/wizzomafizzo/starcheat.svg" alt="Build Status"></a>
+</h1>
+
+<p>starcheat is a <a href="http://playstarbound.com/">Starbound</a> player save editor, you can get free pixels with this! (omg)</p>
+
+<p><strong>An archive of the old starcheat wiki is located in the website_archive folder.</strong></p>
+
+<p><img src="https://raw.github.com/wizzomafizzo/starcheat/master/starcheat/images/screenshot.png" alt="woohoo"></p>
+
+<h2>
+<a id="building-from-source" class="anchor" href="#building-from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building from source</h2>
+
+<p>Here is how to build starcheat from source. Make sure everything in the dependencies section is installed before you do a build.</p>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<ul>
+<li><a href="http://www.python.org/getit/">Python 3.3+</a></li>
+<li><a href="http://www.riverbankcomputing.com/software/pyqt/download5">PyQt5</a></li>
+<li>
+<a href="http://qt-project.org/downloads">Qt 5</a> (don't need this on Windows)</li>
+<li><a href="https://pypi.python.org/pypi/Pillow/">Pillow</a></li>
+<li>
+<a href="https://github.com/blixt/py-starbound">py-starbound</a> (this is included as a <a href="http://git-scm.com/docs/git-submodule">git submodule</a>)</li>
+</ul>
+
+<h3>
+<a id="windows" class="anchor" href="#windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows</h3>
+
+<p>Lines starting with <code>&gt;</code> can be run in PowerShell or cmd.exe.</p>
+
+<ul>
+<li><code>&gt; cd &lt;starcheat top folder&gt;</code></li>
+<li><code>&gt; C:\Python33\python.exe .\build.py</code></li>
+<li>Browse to newly created <code>build\</code> folder</li>
+<li>Double click <code>starcheat.py</code>
+</li>
+</ul>
+
+<h4>
+<a id="standalone-build" class="anchor" href="#standalone-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Standalone Build</h4>
+
+<p>The standalone build makes an executable which includes all Python and Qt dependencies.</p>
+
+<ul>
+<li>Install <a href="http://cx-freeze.sourceforge.net/">cx_freeze</a>
+</li>
+<li><code>&gt; cd &lt;starcheat top folder&gt;</code></li>
+<li><code>&gt; C:\Python33\python.exe .\build.py -e</code></li>
+<li>Browse to newly created <code>dist\</code> folder</li>
+<li>Double click <code>starcheat.exe</code>
+</li>
+</ul>
+
+<h3>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux</h3>
+
+<pre><code>$ cd &lt;starcheat top folder&gt;
+$ ./build.py
+$ ./build/starcheat.py
+</code></pre>
+
+<h3>
+<a id="mac" class="anchor" href="#mac" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac</h3>
+
+<ul>
+<li>Install <a href="http://brew.sh/">homebrew</a>
+</li>
+<li><code>$ brew update</code></li>
+<li>
+<code>$ brew install https://raw.github.com/wizzomafizzo/starcheat/master/mac/starcheat.rb</code> (optionally pass <code>--without-app</code> (create no .app) or <code>--without-binary</code> (creates no binary linked into your prefix) )</li>
+<li>
+<code>brew linkapps</code> (symlinks the .app into your Applications folder)</li>
+</ul>
+
+<h2>
+<a id="release-checklist" class="anchor" href="#release-checklist" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release checklist</h2>
+
+<ul>
+<li>Update version string in config.py</li>
+<li>Update version string in brew file</li>
+<li>Tag release</li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/chrmoritz">chrmoritz</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-000000-01");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>

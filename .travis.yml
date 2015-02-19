@@ -1,21 +1,26 @@
 language: objective-c
+
 before_install:
-  - wget https://github.com/chrmoritz/starcheat/releases/download/4f7bd31/local_cache.tar.gz
+  - wget https://github.com/chrmoritz/starcheat/releases/download/4f7bd31/local_cache_test.tar.gz
   - unset PYTHONPATH
+
 install:
-  - sudo tar xf local_cache.tar.gz -C /usr
+  - sudo tar xf local_cache_test.tar.gz -C /usr
+
 script:
   - mac/travis.rb
+
 branches:
   only:
     - /^v?\d+(\.\d+)*$/
+
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: a+NZtE1KQvLt/32kj9x23c78KJd5fVX/EhL0PexkrirlBI/mjqFD9fqmiHFqNM7fI24h9+Zd5c1qGU+pcmnkxTnb6e8ZCUTrn8lK0AoeNy2HDnBMbingda0cArRR7Rane7EbBkBZmVRW4JDuFxYbpm5ZUcBwaA1T4tLOoN971yQ=
+    secure: EcekaffVmDS4u+y1sPVFQDRko+eSrw56DwKwKHyFIZKuOSx5u3dEzxn1JG9ho43lllhowjnXp40JhMSOheigkbVj22LOmheGWsdJiOt71PXHpXMuzsnB53hTHxqPW4szXs8MHlVWA9Kg8Dstda7S2RYalSP/50NYNLKVdaCSyuY=
   file: build/starcheat-$TRAVIS_BRANCH-osx.tar.gz
   on:
-    repo: wizzomafizzo/starcheat
+    repo: chrmoritz/starcheat
     tags: true
     all_branches: true

@@ -15,7 +15,9 @@ install:
   - brew upgrade qt5
   - brew unlink sip
   - brew upgrade sip
+  - brew unlink xz
   - brew unlink pyqt5
+  - brew unlink python3
   - brew upgrade pyqt5
   - cd $TRAVIS_BUILD_DIR
 

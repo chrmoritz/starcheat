@@ -12,6 +12,9 @@ install:
   - git clean -df
   - brew update
   - brew outdated
+  - brew upgrade qt5
+  - brew upgarde sip
+  - brew upgarde pyqt5
   - cd $TRAVIS_BUILD_DIR
 
 script:

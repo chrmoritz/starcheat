@@ -16,6 +16,7 @@ install:
   - brew unlink sip
   - brew upgrade sip
   - brew unlink python3
+  - brew link gdbm
   - brew upgrade python3
   - cd $TRAVIS_BUILD_DIR
 

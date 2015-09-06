@@ -7,8 +7,11 @@ before_install:
 
 install:
   - sudo tar xf local_cache.tar.gz -C /usr
+  - cd /usr/local
+  - git reset --hard FETCH_HEAD
   - brew update
   - brew outdated
+  - cd $TRAVIS_BUILD_DIR
 
 script:
   - mac/travis.rb

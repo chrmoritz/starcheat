@@ -11,11 +11,17 @@ install:
   - git reset --hard FETCH_HEAD
   - git clean -df
   - brew update
+  - git reset 3bac79f -- Library/Formula/qt5.rb
+  - cat Library/Formula/qt5.rb
   - brew outdated
   - brew unlink python3
   - brew link gdbm
   - brew unlink xz
   - brew upgrade python3
+  - brew unlink sip
+  - brew upgrade sip
+  - brew unlink pyqt5
+  - brew upgrade pyqt5
   - cd $TRAVIS_BUILD_DIR
 
 script:

@@ -2,11 +2,15 @@ language: c
 os: osx
 
 before_install:
-  - wget https://github.com/chrmoritz/starcheat/releases/download/4f7bd31/local_cache.tar.gz
+  - wget https://github.com/chrmoritz/starcheat/releases/download/4f7bd31/local_pyqt5.tar.gz
   - unset PYTHONPATH
+  - brew update
 
 install:
-  - sudo tar xf local_cache.tar.gz -C /usr
+  - brew install python3
+  - sudo tar xf local_pyqt5.tar.gz -C /usr
+  - pip3 install Pillow
+  - pip3 install py2app
 
 script:
   - mac/travis.rb

@@ -9,6 +9,7 @@ install:
   - sudo tar xf local_cache.tar.gz -C /usr
   - cd /usr/local
   - git reset --hard FETCH_HEAD
+  - git clean -df
   - brew update
   - brew outdated
   - cd $TRAVIS_BUILD_DIR

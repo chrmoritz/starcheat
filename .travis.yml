@@ -11,7 +11,7 @@ install:
   - git reset --hard FETCH_HEAD
   - git clean -df
   - brew update
-  - git reset 3bac79f -- Library/Formula/qt5.rb
+  - curl https://raw.githubusercontent.com/Homebrew/homebrew/3bac79f/Library/Formula/qt5.rb -o Library/Formula/qt5.rb
   - cat Library/Formula/qt5.rb
   - brew outdated
   - brew unlink python3
